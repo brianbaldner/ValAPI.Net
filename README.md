@@ -21,3 +21,13 @@ Auth au = Auth.Login(username, password, Region.NA);
 PregameGetPlayer pregame = PregameGetPlayer.GetPlayer(au);
 SelectAgent.LockAgent(au, pregame.MatchID, Agent.Omen);
 ```
+
+This code will write the gamename and tag of all of the players in the match.
+```c#
+Auth au = Auth.Login(username, password, Region.NA);
+MatchData md = MatchData.GetMatchData(au, matchID);
+foreach(MatchData.Player ply in md.players)
+{
+    Console.WriteLine(ply.gameName + "#" + ply.tagLine);
+}
+```
