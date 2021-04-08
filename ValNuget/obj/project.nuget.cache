@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+aEAlIWnVKO9vRIkP9nw+Bb0AQ18d83mGezv59SS1LYRmispe25sthZHCF/9yK7wdpNB0aeU6yBHVSLwVGp0JA==",
+  "dgSpecHash": "Y8RRopYEPovGdA7+IxE0esG6ksZBWDLw9iIg5U+nqmwBNGMe2b6FQA2t2//+vQ8VjJG7Z8FPPJB0n3RCkwmZDQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\brian\\source\\repos\\ValAPI.Net\\ValNuget\\ValAPI.Net.csproj",
+  "projectFilePath": "C:\\Users\\brian\\Documents\\ValAPI.Net\\ValNuget\\ValAPI.Net.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\brian\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\brian\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.10.0\\microsoft.identitymodel.jsonwebtokens.6.10.0.nupkg.sha512",
