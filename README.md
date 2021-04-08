@@ -1,5 +1,5 @@
 # ValAPI.Net
-![Nuget](https://img.shields.io/nuget/v/ValAPI.Net)
+[![Nuget](https://img.shields.io/nuget/v/ValAPI.Net)](https://www.nuget.org/packages/ValAPI.Net/)
 
 A class library for interacting with the Valorant In Game API in the .NET framework.
 
