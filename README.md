@@ -31,6 +31,15 @@ foreach(MatchData.Player ply in md.players)
     Console.WriteLine(ply.gameName + "#" + ply.tagLine);
 }
 ```
+This code does the same thing as the code before but doesn't require a password. The game has to be running though.
+```c#
+Auth au = Websocket.GetAuthLocal(Region.NA);
+MatchData md = MatchData.GetMatchData(au, matchID);
+foreach(MatchData.Player ply in md.players)
+{
+    Console.WriteLine(ply.gameName + "#" + ply.tagLine);
+}
+```
 ## Contributing
 If you have anything you want to add, please contribute. Every endpoint makes this project better. 
 ## Issues and Support
