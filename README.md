@@ -14,3 +14,10 @@ Auth au = Auth.Login(username, password, Region.NA);
 MMR mmr = MMR.GetMMR(au);
 Console.WriteLine(Ranks.GetRankFormatted(mmr.Rank));
 ```
+
+This code will lock Omen in the user's current game.
+```c#
+Auth au = Auth.Login(username, password, Region.NA);
+PregameGetPlayer pregame = PregameGetPlayer.GetPlayer(au);
+SelectAgent.LockAgent(au, pregame.MatchID, Agent.Omen);
+```
