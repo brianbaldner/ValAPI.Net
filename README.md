@@ -31,7 +31,8 @@ foreach(MatchData.Player ply in md.players)
     Console.WriteLine(ply.gameName + "#" + ply.tagLine);
 }
 ```
-
+## Contributing
+If you have anything you want to add, please contribute. Every endpoint makes this project better. 
 ## Issues and Support
 If you need help or want to report bugs, reach out on discord at bigtaco#4761.
 
