@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>ValAPI.Net</id>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <authors>BrianBaldner, RumbleMike</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A class library for interacting with the Valorant In Game API.</description>

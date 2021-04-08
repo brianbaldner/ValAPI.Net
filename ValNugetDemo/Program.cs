@@ -7,8 +7,9 @@ namespace ValAPINetDemo
         static void Main(string[] args)
         {
             Auth au = Auth.Login("username", "password", Region.NA);
-            Storefront mmrvas = Storefront.GetOffers(au);
-            Console.WriteLine(mmrvas.SkinsPanelLayout.SingleItemOffers[0]);
+            CompHistory his = CompHistory.GetCompHistory(au, 0, 20);
+            MatchData md = MatchData.GetMatchData(au, his.Matches[0].MatchID);
+            Console.WriteLine(md.players[0].gameName);
             Console.ReadKey();
         }
     }

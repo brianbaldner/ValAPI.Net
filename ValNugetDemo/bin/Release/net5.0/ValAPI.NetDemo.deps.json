@@ -1,30 +1,20 @@
 {
   "runtimeTarget": {
-    "name": ".NETStandard,Version=v2.1/",
+    "name": ".NETCoreApp,Version=v5.0",
     "signature": ""
   },
   "compilationOptions": {},
   "targets": {
-    ".NETStandard,Version=v2.1": {},
-    ".NETStandard,Version=v2.1/": {
-      "ValAPI.Net/1.1.0": {
+    ".NETCoreApp,Version=v5.0": {
+      "ValAPI.NetDemo/1.0.0": {
         "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "6.10.0",
-          "Newtonsoft.Json": "13.0.1",
-          "RestSharp": "106.11.7"
+          "ValAPI.Net": "1.0.0"
         },
         "runtime": {
-          "ValAPI.Net.dll": {}
+          "ValAPI.NetDemo.dll": {}
         }
       },
-      "Microsoft.CSharp/4.5.0": {
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.CSharp.dll": {
-            "assemblyVersion": "4.0.4.0",
-            "fileVersion": "4.6.26515.6"
-          }
-        }
-      },
+      "Microsoft.CSharp/4.5.0": {},
       "Microsoft.IdentityModel.JsonWebTokens/6.10.0": {
         "dependencies": {
           "Microsoft.IdentityModel.Tokens": "6.10.0"
@@ -73,18 +63,21 @@
           }
         }
       },
-      "System.Security.Cryptography.Cng/4.5.0": {
+      "System.Security.Cryptography.Cng/4.5.0": {},
+      "ValAPI.Net/1.0.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.JsonWebTokens": "6.10.0",
+          "Newtonsoft.Json": "13.0.1",
+          "RestSharp": "106.11.7"
+        },
         "runtime": {
-          "lib/netstandard2.0/System.Security.Cryptography.Cng.dll": {
-            "assemblyVersion": "4.3.0.0",
-            "fileVersion": "4.6.26515.6"
-          }
+          "ValAPI.Net.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "ValAPI.Net/1.1.0": {
+    "ValAPI.NetDemo/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -137,6 +130,11 @@
       "sha512": "sha512-WG3r7EyjUe9CMPFSs6bty5doUqT+q9pbI80hlNzo2SkPkZ4VTuZkGWjpp77JB8+uaL4DFPRdBsAY+DX3dBK92A==",
       "path": "system.security.cryptography.cng/4.5.0",
       "hashPath": "system.security.cryptography.cng.4.5.0.nupkg.sha512"
+    },
+    "ValAPI.Net/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

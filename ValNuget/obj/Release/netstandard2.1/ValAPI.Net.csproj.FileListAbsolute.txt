@@ -1,0 +1,9 @@
+C:\Users\brian\Documents\ValAPI.Net\ValNuget\bin\Release\netstandard2.1\ValAPI.Net.deps.json
+C:\Users\brian\Documents\ValAPI.Net\ValNuget\bin\Release\netstandard2.1\ValAPI.Net.dll
+C:\Users\brian\Documents\ValAPI.Net\ValNuget\bin\Release\netstandard2.1\ValAPI.Net.pdb
+C:\Users\brian\Documents\ValAPI.Net\ValNuget\obj\Release\netstandard2.1\ValAPI.Net.csprojAssemblyReference.cache
+C:\Users\brian\Documents\ValAPI.Net\ValNuget\obj\Release\netstandard2.1\ValAPI.Net.AssemblyInfoInputs.cache
+C:\Users\brian\Documents\ValAPI.Net\ValNuget\obj\Release\netstandard2.1\ValAPI.Net.AssemblyInfo.cs
+C:\Users\brian\Documents\ValAPI.Net\ValNuget\obj\Release\netstandard2.1\ValAPI.Net.csproj.CoreCompileInputs.cache
+C:\Users\brian\Documents\ValAPI.Net\ValNuget\obj\Release\netstandard2.1\ValAPI.Net.dll
+C:\Users\brian\Documents\ValAPI.Net\ValNuget\obj\Release\netstandard2.1\ValAPI.Net.pdb
