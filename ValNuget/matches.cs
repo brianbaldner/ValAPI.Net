@@ -13,6 +13,7 @@ namespace ValAPINet
         public int BeginIndex { get; set; }
         public int EndIndex { get; set; }
         public int Total { get; set; }
+        public int StatusCode { get; set; }
         public List<Matches> History { get; set; }
         public class Matches
         {
@@ -37,9 +38,11 @@ namespace ValAPINet
             request.AddHeader("X-Riot-ClientPlatform", $"ew0KCSJwbGF0Zm9ybVR5cGUiOiAiUEMiLA0KCSJwbGF0Zm9ybU9TIjogIldpbmRvd3MiLA0KCSJwbGF0Zm9ybU9TVmVyc2lvbiI6ICIxMC4wLjE5MDQyLjEuMjU2LjY0Yml0IiwNCgkicGxhdGZvcm1DaGlwc2V0IjogIlVua25vd24iDQp9");
             request.AddHeader("X-Riot-ClientVersion", $"{au.version}");
             //request.AddJsonBody("{}");
-            string responce = client.Execute(request).Content;
+            var responce = client.Execute(request);
+            string responcecontent = responce.Content;
             //JObject obj = JObject.FromObject(JsonConvert.DeserializeObject(responce));
-            ret = JsonConvert.DeserializeObject<MatchHistory>(responce);
+            ret = JsonConvert.DeserializeObject<MatchHistory>(responcecontent);
+            ret.StatusCode = (int)responce.StatusCode;
             return ret;
         }
     }

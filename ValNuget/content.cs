@@ -175,6 +175,7 @@ namespace ValAPINet
             public List<StorefrontItem> StorefrontItems { get; set; }
             public List<Season> Seasons { get; set; }
             public List<CompetitiveSeason> CompetitiveSeasons { get; set; }
+        public int StatusCode { get; set; }
         public static Content GetContent(Region re)
         {
             RestClient versionclient = new RestClient("https://valorant-api.com/v1/version");
@@ -194,8 +195,10 @@ namespace ValAPINet
             request.AddHeader("X-Riot-ClientPlatform", $"ew0KCSJwbGF0Zm9ybVR5cGUiOiAiUEMiLA0KCSJwbGF0Zm9ybU9TIjogIldpbmRvd3MiLA0KCSJwbGF0Zm9ybU9TVmVyc2lvbiI6ICIxMC4wLjE5MDQyLjEuMjU2LjY0Yml0IiwNCgkicGxhdGZvcm1DaGlwc2V0IjogIlVua25vd24iDQp9");
             request.AddHeader("X-Riot-ClientVersion", $"{versionformat}");
             //request.AddJsonBody("{}");
-            string responce = client.Execute(request).Content;
-            ret = JsonConvert.DeserializeObject<Content>(responce);
+            var responce = client.Execute(request);
+            string responcecontent = responce.Content;
+            ret = JsonConvert.DeserializeObject<Content>(responcecontent);
+            ret.StatusCode = (int)responce.StatusCode;
             return ret;
         }
         public static string GetSeason(Region re)
@@ -216,5 +219,6 @@ namespace ValAPINet
             }
             return season;
         }
+
     }
 }

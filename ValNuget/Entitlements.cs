@@ -11,6 +11,7 @@ namespace ValAPINet
     {
         public string ItemTypeID { get; set; }
         public List<Entitlement> Entitlements { get; set; }
+        public int StatusCode { get; set; }
         public class Entitlement
         {
             public string ItemID { get; set; }
@@ -30,8 +31,10 @@ namespace ValAPINet
             request.AddHeader("X-Riot-ClientPlatform", $"ew0KCSJwbGF0Zm9ybVR5cGUiOiAiUEMiLA0KCSJwbGF0Zm9ybU9TIjogIldpbmRvd3MiLA0KCSJwbGF0Zm9ybU9TVmVyc2lvbiI6ICIxMC4wLjE5MDQyLjEuMjU2LjY0Yml0IiwNCgkicGxhdGZvcm1DaGlwc2V0IjogIlVua25vd24iDQp9");
             request.AddHeader("X-Riot-ClientVersion", $"{au.version}");
 
-            string responce = client.Execute(request).Content;
-            ret = JsonConvert.DeserializeObject<ItemEntitlements>(responce);
+            var responce = client.Execute(request);
+            string responcecontent = responce.Content;
+            ret = JsonConvert.DeserializeObject<ItemEntitlements>(responcecontent);
+            ret.StatusCode = (int)responce.StatusCode;
             return ret;
         }
     }

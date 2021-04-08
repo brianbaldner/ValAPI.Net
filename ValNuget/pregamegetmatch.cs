@@ -30,6 +30,7 @@ namespace ValAPINet
         public bool IsRanked { get; set; }
         public long PhaseTimeRemainingNS { get; set; }
         public bool altModesFlagADA { get; set; }
+        public int StatusCode { get; set; }
         public class PlayerIdentity
         {
             public string Subject { get; set; }
@@ -83,8 +84,10 @@ namespace ValAPINet
             request.AddHeader("X-Riot-ClientPlatform", $"ew0KCSJwbGF0Zm9ybVR5cGUiOiAiUEMiLA0KCSJwbGF0Zm9ybU9TIjogIldpbmRvd3MiLA0KCSJwbGF0Zm9ybU9TVmVyc2lvbiI6ICIxMC4wLjE5MDQyLjEuMjU2LjY0Yml0IiwNCgkicGxhdGZvcm1DaGlwc2V0IjogIlVua25vd24iDQp9");
             request.AddHeader("X-Riot-ClientVersion", $"{au.version}");
 
-            string responce = client.Execute(request).Content;
-            ret = JsonConvert.DeserializeObject<PregameGetMatch>(responce);
+            var responce = client.Execute(request);
+            string responcecontent = responce.Content;
+            ret = JsonConvert.DeserializeObject<PregameGetMatch>(responcecontent);
+            ret.StatusCode = (int)responce.StatusCode;
             return ret;
         }
     }

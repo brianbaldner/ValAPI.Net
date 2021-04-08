@@ -6,11 +6,12 @@ namespace ValAPINetDemo
     {
         static void Main(string[] args)
         {
-            Auth au = Auth.Login("username", "password", Region.NA);
-            CompHistory his = CompHistory.GetCompHistory(au, 0, 20);
-            MatchData md = MatchData.GetMatchData(au, his.Matches[0].MatchID);
-            Console.WriteLine(md.players[0].gameName);
-            Console.ReadKey();
+            string username = "";
+            string password = "";
+            string matchID = "";
+            Auth au = Websocket.GetAuthLocal(Region.NA);
+            MMR mmr = MMR.GetMMR(au);
+            Console.WriteLine(Ranks.GetRankFormatted(mmr.Rank));
         }
     }
 }

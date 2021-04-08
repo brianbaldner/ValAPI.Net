@@ -20,6 +20,7 @@ namespace ValAPINet
         public int RankedRating { get; set; }
         public int GamesNeededForRating { get; set; }
         public int TotalWinsNeededForRank { get; set; }
+        public int StatusCode { get; set; }
         public static MMR GetMMR(Auth au, string playerid = "useauth")
         {
             MMR ret = new MMR();
@@ -36,8 +37,9 @@ namespace ValAPINet
             request.AddHeader("X-Riot-ClientPlatform", $"ew0KCSJwbGF0Zm9ybVR5cGUiOiAiUEMiLA0KCSJwbGF0Zm9ybU9TIjogIldpbmRvd3MiLA0KCSJwbGF0Zm9ybU9TVmVyc2lvbiI6ICIxMC4wLjE5MDQyLjEuMjU2LjY0Yml0IiwNCgkicGxhdGZvcm1DaGlwc2V0IjogIlVua25vd24iDQp9");
             request.AddHeader("X-Riot-ClientVersion", $"{au.version}");
             //request.AddJsonBody("{}");
-            string responce = client.Execute(request).Content;
-            JObject obj = JObject.FromObject(JsonConvert.DeserializeObject(responce));
+            var responce = client.Execute(request);
+            string responcecontent = responce.Content;
+            JObject obj = JObject.FromObject(JsonConvert.DeserializeObject(responcecontent));
             string season = obj["LatestCompetitiveUpdate"].Value<string>("SeasonID");
             ret.SeasonID = obj["QueueSkills"]["competitive"]["SeasonalInfoBySeasonID"][season].Value<string>("SeasonID");
             ret.NumberOfWins = obj["QueueSkills"]["competitive"]["SeasonalInfoBySeasonID"][season].Value<int>("NumberOfWins");
@@ -50,6 +52,7 @@ namespace ValAPINet
             ret.RankedRating = obj["QueueSkills"]["competitive"]["SeasonalInfoBySeasonID"][season].Value<int>("RankedRating");
             ret.GamesNeededForRating = obj["QueueSkills"]["competitive"]["SeasonalInfoBySeasonID"][season].Value<int>("GamesNeededForRating");
             ret.TotalWinsNeededForRank = obj["QueueSkills"]["competitive"]["SeasonalInfoBySeasonID"][season].Value<int>("TotalWinsNeededForRank");
+            ret.StatusCode = (int)responce.StatusCode;
             return ret;
         }
     }

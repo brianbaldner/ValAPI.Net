@@ -13,6 +13,7 @@ namespace ValAPINet
         public string Subject { get; set; }
         public string GameName { get; set; }
         public string TagLine { get; set; }
+        public int StatusCode { get; set; }
         public static Username GetUsername(Auth au, string playerid = "useauth")
         {
             Username ret = new Username();
@@ -33,8 +34,10 @@ namespace ValAPINet
             List<string> ls = new List<string>();
             ls.Add(playerid);
             request.AddJsonBody(ls);
-            string responce = client.Execute(request).Content;
-            List<Username> list = JsonConvert.DeserializeObject<List<Username>>(responce);
+            var responce = client.Execute(request);
+            string responcecontent = responce.Content;
+            List<Username> list = JsonConvert.DeserializeObject<List<Username>>(responcecontent);
+            list[0].StatusCode = (int)responce.StatusCode;
             ret = list[0];
             //ret.responce = responce;
             return ret;
