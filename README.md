@@ -7,7 +7,7 @@ A class library for interacting with the Valorant In Game API in the .NET framew
 
 [NuGet](https://www.nuget.org/packages/ValAPI.Net/)
 
-# Example
+## Example
 This example gets the rank of the logged in user. This would return Platinum 1.
 ```c#
 Auth au = Auth.Login(username, password, Region.NA);
@@ -31,3 +31,6 @@ foreach(MatchData.Player ply in md.players)
     Console.WriteLine(ply.gameName + "#" + ply.tagLine);
 }
 ```
+
+## Issues and Support
+If you need help or want to report bugs, reach out on discord at bigtaco#4761.
