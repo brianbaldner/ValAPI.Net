@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "J0U8oRaWDMRQxoBHM1xINNtm4Yws7jUQAUtZmv0N3TR5sjHko8Y0vP2JWrxEzGHZciRqup5OFpdkKQ37zRDsig==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\brian\\source\\repos\\ValAPI.Net\\ValNugetDemo\\ValAPI.NetDemo.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Users\\brian\\source\\repos\\ValAPI.Net\\ValAPINet\\ValAPINet.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\Users\\brian\\source\\repos\\ValAPI.Net\\ValAPINet\\ValAPINet.csproj",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
+}

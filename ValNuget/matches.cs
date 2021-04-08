@@ -1,0 +1,46 @@
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using RestSharp;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ValAPINet
+{
+    public class MatchHistory
+    {
+        public string Subject { get; set; }
+        public int BeginIndex { get; set; }
+        public int EndIndex { get; set; }
+        public int Total { get; set; }
+        public List<Matches> History { get; set; }
+        public class Matches
+        {
+            public string MatchID { get; set; }
+            public object GameStartTime { get; set; }
+            public string TeamID { get; set; }
+        }
+        public static MatchHistory GetMatchHistory(Auth au, int startindex, int endindex, string playerid = "useauth")
+        {
+            MatchHistory ret = new MatchHistory();
+            if (playerid == "useauth")
+            {
+                playerid = au.subject;
+            }
+            string paramz = "?startIndex=" + startindex + "&endIndex=" + endindex;
+            RestClient client = new RestClient("https://pd." + au.region + ".a.pvp.net/match-history/v1/history/" + playerid + paramz);
+            client.CookieContainer = au.cookies;
+
+            RestRequest request = new RestRequest(Method.GET);
+            request.AddHeader("Authorization", $"Bearer {au.AccessToken}");
+            request.AddHeader("X-Riot-Entitlements-JWT", $"{au.EntitlementToken}");
+            request.AddHeader("X-Riot-ClientPlatform", $"ew0KCSJwbGF0Zm9ybVR5cGUiOiAiUEMiLA0KCSJwbGF0Zm9ybU9TIjogIldpbmRvd3MiLA0KCSJwbGF0Zm9ybU9TVmVyc2lvbiI6ICIxMC4wLjE5MDQyLjEuMjU2LjY0Yml0IiwNCgkicGxhdGZvcm1DaGlwc2V0IjogIlVua25vd24iDQp9");
+            request.AddHeader("X-Riot-ClientVersion", $"{au.version}");
+            //request.AddJsonBody("{}");
+            string responce = client.Execute(request).Content;
+            //JObject obj = JObject.FromObject(JsonConvert.DeserializeObject(responce));
+            ret = JsonConvert.DeserializeObject<MatchHistory>(responce);
+            return ret;
+        }
+    }
+}
