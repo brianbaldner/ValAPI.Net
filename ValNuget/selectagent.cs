@@ -9,8 +9,7 @@ namespace ValAPINet
 {
     public class SelectAgent
     {
-        public string responce { get; set; }
-        public static SelectAgent ChooseAgent(Auth au, string matchid, string agent)
+        public static void ChooseAgent(Auth au, string matchid, string agent)
         {
             SelectAgent ret = new SelectAgent();
 
@@ -26,10 +25,9 @@ namespace ValAPINet
             request.AddHeader("X-Riot-ClientVersion", $"{au.version}");
 
             string responce = client.Execute(request).Content;
-            ret.responce = responce;
-            return ret;
+            return;
         }
-        public static SelectAgent LockAgent(Auth au, string matchid, string agent)
+        public static void LockAgent(Auth au, string matchid, string agent)
         {
             SelectAgent ret = new SelectAgent();
 
@@ -45,8 +43,7 @@ namespace ValAPINet
             request.AddHeader("X-Riot-ClientVersion", $"{au.version}");
 
             string responce = client.Execute(request).Content;
-            ret.responce = responce;
-            return ret;
+            return;
         }
     }
 }
