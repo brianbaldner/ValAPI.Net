@@ -5,8 +5,8 @@ A class library for interacting with the Valorant In Game API in the .NET framew
 
 [Docs](https://github.com/brianbaldner/ValAPI.Net/wiki)
 
-[NuGet](https://www.nuget.org/packages/ValAPI.Net/)
-
+## Usage
+Use Nuget to download the package to your project. Make sure to include `using ValAPINet;` at the top of your code. The documentation is found in the [wiki](https://github.com/brianbaldner/ValAPI.Net/wiki), but I reccomend using the docsv2 folder in the ValorantClientAPI documentation found at [https://github.com/RumbleMike/ValorantClientAPI](https://github.com/RumbleMike/ValorantClientAPI).
 ## Example
 This example gets the rank of the logged in user. This would return Platinum 1.
 ```c#
@@ -34,3 +34,7 @@ foreach(MatchData.Player ply in md.players)
 
 ## Issues and Support
 If you need help or want to report bugs, reach out on discord at bigtaco#4761.
+
+
+## Credits
+This would not be possible without RumbleMike's documentation, find him at [@ValorLeaks](https://twitter.com/ValorLeaks) and [@RumbleMikee](https://twitter.com/RumbleMikee). 
