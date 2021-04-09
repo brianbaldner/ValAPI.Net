@@ -12,10 +12,28 @@ namespace ValAPINet
 {
     public class Websocket
     {
-        public static Auth GetAuthLocal(Region region)
+        public static Auth GetAuthLocal(Region region, bool WaitForLockfile = true)
         {
             string lockfile = "";
-            while (lockfile == "")
+            if (WaitForLockfile == true)
+            {
+                while (lockfile == "")
+                {
+                    try
+                    {
+                        using (var fs = new FileStream(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Riot Games\\Riot Client\\Config\\lockfile", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                        using (var sr = new StreamReader(fs, Encoding.Default))
+                        {
+                            lockfile = sr.ReadToEnd();
+                        }
+                    }
+                    catch (Exception e)
+                    {
+
+                    }
+                }
+            }
+            else
             {
                 try
                 {
@@ -27,7 +45,7 @@ namespace ValAPINet
                 }
                 catch (Exception e)
                 {
-
+                    return null;
                 }
             }
             string[] lf = lockfile.Split(":");
@@ -65,7 +83,7 @@ namespace ValAPINet
         {
             Process p = new Process();
             p.StartInfo.FileName = "C:\\Riot Games\\Riot Client\\RiotClientServices.exe";
-            p.StartInfo.Arguments = "--launch-product=valorant --launch-patchline=live --insecure --app-port=12345";
+            p.StartInfo.Arguments = "--launch-product=valorant --launch-patchline=live";
             p.Start();
             return GetAuthLocal(region);
         }

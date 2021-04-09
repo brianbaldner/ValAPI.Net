@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using ValAPINet;
 namespace ValAPINetDemo
 {
@@ -6,12 +7,10 @@ namespace ValAPINetDemo
     {
         static void Main(string[] args)
         {
-            string username = "";
-            string password = "";
-            string matchID = "";
-            Auth au = Websocket.GetAuthLocal(Region.NA);
-            MMR mmr = MMR.GetMMR(au);
-            Console.WriteLine(Ranks.GetRankFormatted(mmr.Rank));
+            Auth au = Auth.Login("username", "password", Region.NA);
+            GetParty gp = GetParty.Party(au);
+            PartyInfo pi = PartyInfo.Party(au, gp.CurrentPartyID);
+            Console.WriteLine(pi.Members[0].Subject);
         }
     }
 }
