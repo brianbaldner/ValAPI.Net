@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "ValAPI.NetDemo/1.0.0": {
         "dependencies": {
-          "ValAPI.Net": "1.2.0"
+          "ValAPI.Net": "1.2.3"
         },
         "runtime": {
           "ValAPI.NetDemo.dll": {}
@@ -64,7 +64,7 @@
         }
       },
       "System.Security.Cryptography.Cng/4.5.0": {},
-      "ValAPI.Net/1.2.0": {
+      "ValAPI.Net/1.2.3": {
         "dependencies": {
           "Microsoft.IdentityModel.JsonWebTokens": "6.10.0",
           "Newtonsoft.Json": "13.0.1",
@@ -131,7 +131,7 @@
       "path": "system.security.cryptography.cng/4.5.0",
       "hashPath": "system.security.cryptography.cng.4.5.0.nupkg.sha512"
     },
-    "ValAPI.Net/1.2.0": {
+    "ValAPI.Net/1.2.3": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

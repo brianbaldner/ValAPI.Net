@@ -28,22 +28,14 @@ namespace ValAPINet
             public string CompetitiveMovement { get; set; }
             public int AFKPenalty { get; set; }
         }
-        public static CompHistory GetCompHistory(Auth au, int startindex, int endindex, string queue = "none", string playerid = "useauth")
+        public static CompHistory GetCompHistory(Auth au, int startindex, int endindex, string playerid = "useauth")
         {
             CompHistory ret = new CompHistory();
             if (playerid == "useauth")
             {
                 playerid = au.subject;
             }
-            string paramz = "";
-            if(queue == "none")
-            {
-                paramz = "?startIndex=" + startindex + "&endIndex=" + endindex;
-            }
-            else
-            {
-                paramz = "?startIndex=" + startindex + "&endIndex=" + endindex + "&queue=" + queue;
-            }
+                string paramz = "?startIndex=" + startindex + "&endIndex=" + endindex;
             RestClient client = new RestClient("https://pd." + au.region + ".a.pvp.net/mmr/v1/players/" + playerid + "/competitiveupdates" + paramz);
             client.CookieContainer = au.cookies;
 

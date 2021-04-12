@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.IO;
 using ValAPINet;
 namespace ValAPINetDemo
@@ -7,10 +8,9 @@ namespace ValAPINetDemo
     {
         static void Main(string[] args)
         {
-            Auth au = Auth.Login("username", "password", Region.NA);
-            GetParty gp = GetParty.Party(au);
-            PartyInfo pi = PartyInfo.Party(au, gp.CurrentPartyID);
-            Console.WriteLine(pi.Members[0].Subject);
+            UserPresence pre = UserPresence.GetPresence();
+            string res = JsonConvert.SerializeObject(pre.presences[0]);
+            Console.WriteLine(res);
         }
     }
 }

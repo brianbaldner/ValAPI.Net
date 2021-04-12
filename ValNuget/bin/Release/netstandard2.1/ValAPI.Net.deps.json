@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.1": {},
     ".NETStandard,Version=v2.1/": {
-      "ValAPI.Net/1.2.1": {
+      "ValAPI.Net/1.2.3": {
         "dependencies": {
           "Microsoft.IdentityModel.JsonWebTokens": "6.10.0",
           "Newtonsoft.Json": "13.0.1",
@@ -84,7 +84,7 @@
     }
   },
   "libraries": {
-    "ValAPI.Net/1.2.1": {
+    "ValAPI.Net/1.2.3": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -4,21 +4,30 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>ValAPI.Net</AssemblyName>
     <RootNamespace>ValAPINet</RootNamespace>
-    <Authors>BrianBaldner, RumbleMike</Authors>
+    <Authors>BrianBaldner</Authors>
     <Description>A class library for interacting with the Valorant In Game API.</Description>
     <RepositoryUrl>https://github.com/brianbaldner/ValAPI.Net</RepositoryUrl>
     <PackageReleaseNotes>First release</PackageReleaseNotes>
     <NeutralLanguage>en</NeutralLanguage>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.2.1</Version>
+    <Version>1.2.3</Version>
     <PackageLicenseExpression></PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageIcon>image0.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/brianbaldner/ValAPI.Net</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="6.10.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="RestSharp" Version="106.11.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\Downloads\image0.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

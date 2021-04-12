@@ -48,6 +48,16 @@ namespace ValAPINet
                     return null;
                 }
             }
+            RestClient versionclient = new RestClient("https://valorant-api.com/v1/version");
+            RestRequest versionrequest = new RestRequest(Method.GET);
+            string json = versionclient.Execute(versionrequest).Content;
+            var version = JsonConvert.DeserializeObject(json);
+            JToken versionobj = JObject.FromObject(version);
+            JToken versiondata = JObject.FromObject(versionobj["data"]);
+
+            //Get ID list
+            string versionformat = versiondata["branch"].Value<string>() + "-shipping-" + versiondata["buildVersion"].Value<string>() + "-" + versiondata["version"].Value<string>().Substring(versiondata["version"].Value<string>().Length - 6);
+
             string[] lf = lockfile.Split(":");
             RestClient GetClient = new RestClient(new Uri($"https://127.0.0.1:{lf[2]}/entitlements/v1/token"));
             GetClient.RemoteCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
@@ -66,15 +76,6 @@ namespace ValAPINet
             au.EntitlementToken = (string)obj["token"];
             au.subject = (string)obj["subject"];
             au.region = region;
-            RestClient versionclient = new RestClient("https://valorant-api.com/v1/version");
-            RestRequest versionrequest = new RestRequest(Method.GET);
-            string json = versionclient.Execute(versionrequest).Content;
-            var version = JsonConvert.DeserializeObject(json);
-            JToken versionobj = JObject.FromObject(version);
-            JToken versiondata = JObject.FromObject(versionobj["data"]);
-
-            //Get ID list
-            string versionformat = versiondata["branch"].Value<string>() + "-shipping-" + versiondata["buildVersion"].Value<string>() + "-" + versiondata["version"].Value<string>().Substring(versiondata["version"].Value<string>().Length - 6);
             au.version = versionformat;
             au.cookies = new CookieContainer();
             return au;
