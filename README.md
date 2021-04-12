@@ -49,3 +49,6 @@ If you need help or want to report bugs, reach out on discord at bigtaco#4761.
 
 ## Credits
 This would not be possible without RumbleMike's documentation, find him at [@ValorLeaks](https://twitter.com/ValorLeaks) and [@RumbleMikee](https://twitter.com/RumbleMikee). 
+
+## Disclaimer
+This package is not supported or endorsed by Riot Games. Any use of this package is at your own risk. I take no responsibility over the use of this package. By downloading through Nuget, you agree to these conditions
