@@ -7,14 +7,15 @@
     <Authors>BrianBaldner</Authors>
     <Description>A class library for interacting with the Valorant In Game API.</Description>
     <RepositoryUrl>https://github.com/brianbaldner/ValAPI.Net</RepositoryUrl>
-    <PackageReleaseNotes>First release</PackageReleaseNotes>
+    <PackageReleaseNotes>New endpoints and bug fixes</PackageReleaseNotes>
     <NeutralLanguage>en</NeutralLanguage>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.2.3</Version>
+    <Version>1.2.4</Version>
     <PackageLicenseExpression></PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageIcon>image0.png</PackageIcon>
     <PackageProjectUrl>https://github.com/brianbaldner/ValAPI.Net</PackageProjectUrl>
+    <PackageTags>Valorant, Valorant API, Valorant.Net</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

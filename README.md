@@ -1,4 +1,4 @@
-![# ValAPI.Net](https://raw.githubusercontent.com/brianbaldner/ValAPI.Net/main/08AC2C36-D1AE-4ADA-89A0-0C2B39EB92C7.png)
+![# ValAPI.Net](https://raw.githubusercontent.com/brianbaldner/ValAPI.Net/main/banner.jpg)
 
 [![Nuget](https://img.shields.io/nuget/v/ValAPI.Net)](https://www.nuget.org/packages/ValAPI.Net/)
 
