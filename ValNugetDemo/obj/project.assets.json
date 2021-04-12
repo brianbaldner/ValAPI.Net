@@ -79,7 +79,7 @@
           }
         }
       },
-      "ValAPI.Net/1.2.4": {
+      "ValAPI.Net/1.2.5": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
@@ -328,7 +328,7 @@
         "version.txt"
       ]
     },
-    "ValAPI.Net/1.2.4": {
+    "ValAPI.Net/1.2.5": {
       "type": "project",
       "path": "../ValNuget/ValAPI.Net.csproj",
       "msbuildProject": "../ValNuget/ValAPI.Net.csproj"
@@ -336,7 +336,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "ValAPI.Net >= 1.2.4"
+      "ValAPI.Net >= 1.2.5"
     ]
   },
   "packageFolders": {
