@@ -1,9 +1,6 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using RestSharp;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ValAPINet
 {
@@ -31,7 +28,7 @@ namespace ValAPINet
         }
         public static Leaderboard GetLeaderboard(Auth au, Region region, string season = "nonegiven")
         {
-            if(season == "nonegiven")
+            if (season == "nonegiven")
             {
                 season = Content.GetSeason(au.region);
             }

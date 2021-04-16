@@ -3,9 +3,7 @@ using Newtonsoft.Json.Linq;
 using RestSharp;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Net;
 using System.Text;
 
 namespace ValAPINet
@@ -71,18 +69,18 @@ namespace ValAPINet
         {
             string lockfile = "";
 
-                try
+            try
+            {
+                using (var fs = new FileStream(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Riot Games\\Riot Client\\Config\\lockfile", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                using (var sr = new StreamReader(fs, Encoding.Default))
                 {
-                    using (var fs = new FileStream(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Riot Games\\Riot Client\\Config\\lockfile", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-                    using (var sr = new StreamReader(fs, Encoding.Default))
-                    {
-                        lockfile = sr.ReadToEnd();
-                    }
+                    lockfile = sr.ReadToEnd();
                 }
-                catch (Exception e)
-                {
-                    return null;
-                }
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
             RestClient versionclient = new RestClient("https://valorant-api.com/v1/version");
             RestRequest versionrequest = new RestRequest(Method.GET);
             string json = versionclient.Execute(versionrequest).Content;

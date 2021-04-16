@@ -3,7 +3,6 @@ using Newtonsoft.Json.Linq;
 using RestSharp;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ValAPINet
 {
@@ -157,24 +156,24 @@ namespace ValAPINet
             public DateTime EndTime { get; set; }
             public bool DevelopmentOnly { get; set; }
         }
-            public List<Character> Characters { get; set; }
-            public List<Map> Maps { get; set; }
-            public List<Chroma> Chromas { get; set; }
-            public List<Skin> Skins { get; set; }
-            public List<SkinLevel> SkinLevels { get; set; }
-            public List<Attachment> Attachments { get; set; }
-            public List<Equip> Equips { get; set; }
-            public List<Theme> Themes { get; set; }
-            public List<GameMode> GameModes { get; set; }
-            public List<Spray> Sprays { get; set; }
-            public List<SprayLevel> SprayLevels { get; set; }
-            public List<Charm> Charms { get; set; }
-            public List<CharmLevel> CharmLevels { get; set; }
-            public List<PlayerCard> PlayerCards { get; set; }
-            public List<PlayerTitle> PlayerTitles { get; set; }
-            public List<StorefrontItem> StorefrontItems { get; set; }
-            public List<Season> Seasons { get; set; }
-            public List<CompetitiveSeason> CompetitiveSeasons { get; set; }
+        public List<Character> Characters { get; set; }
+        public List<Map> Maps { get; set; }
+        public List<Chroma> Chromas { get; set; }
+        public List<Skin> Skins { get; set; }
+        public List<SkinLevel> SkinLevels { get; set; }
+        public List<Attachment> Attachments { get; set; }
+        public List<Equip> Equips { get; set; }
+        public List<Theme> Themes { get; set; }
+        public List<GameMode> GameModes { get; set; }
+        public List<Spray> Sprays { get; set; }
+        public List<SprayLevel> SprayLevels { get; set; }
+        public List<Charm> Charms { get; set; }
+        public List<CharmLevel> CharmLevels { get; set; }
+        public List<PlayerCard> PlayerCards { get; set; }
+        public List<PlayerTitle> PlayerTitles { get; set; }
+        public List<StorefrontItem> StorefrontItems { get; set; }
+        public List<Season> Seasons { get; set; }
+        public List<CompetitiveSeason> CompetitiveSeasons { get; set; }
         public int StatusCode { get; set; }
         public static Content GetContent(Region re)
         {
@@ -205,9 +204,9 @@ namespace ValAPINet
         {
             Content con = GetContent(re);
             string season = "";
-            foreach(CompetitiveSeason seasn in con.CompetitiveSeasons)
+            foreach (CompetitiveSeason seasn in con.CompetitiveSeasons)
             {
-                if(seasn.StartTime.CompareTo(DateTime.UtcNow) < 0 && seasn.EndTime.CompareTo(DateTime.UtcNow) > 0)
+                if (seasn.StartTime.CompareTo(DateTime.UtcNow) < 0 && seasn.EndTime.CompareTo(DateTime.UtcNow) > 0)
                 {
                     season = seasn.SeasonID;
                     break;

@@ -8,9 +8,16 @@ namespace ValAPINetDemo
     {
         static void Main(string[] args)
         {
-            UserPresence pre = UserPresence.GetPresence();
-            string res = JsonConvert.SerializeObject(pre.presences[0]);
-            Console.WriteLine(res);
+            Auth auth = Websocket.GetAuthLocal(Region.NA);
+            PregameGetPlayer player = PregameGetPlayer.GetPlayer(auth);
+            while (1 == 1)
+            {
+                PregameGetMatch match = PregameGetMatch.GetMatch(auth, player.MatchID);
+                foreach(PregameGetMatch.Player ply in match.AllyTeam.Players)
+                {
+                    Console.WriteLine(ply.CharacterID);
+                }
+            }
         }
     }
 }

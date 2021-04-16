@@ -1,9 +1,6 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using RestSharp;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ValAPINet
 {
@@ -38,12 +35,12 @@ namespace ValAPINet
             public string ID { get; set; }
         }
 
-            public string Subject { get; set; }
-            public int Version { get; set; }
-            public List<Gun> Guns { get; set; }
-            public List<Spray> Sprays { get; set; }
-            public PlayerCardObj PlayerCard { get; set; }
-            public PlayerTitleObj PlayerTitle { get; set; }
+        public string Subject { get; set; }
+        public int Version { get; set; }
+        public List<Gun> Guns { get; set; }
+        public List<Spray> Sprays { get; set; }
+        public PlayerCardObj PlayerCard { get; set; }
+        public PlayerTitleObj PlayerTitle { get; set; }
         public int StatusCode { get; set; }
         public static Inventory GetInventory(Auth au)
         {

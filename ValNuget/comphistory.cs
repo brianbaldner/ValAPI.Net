@@ -1,9 +1,6 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using RestSharp;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ValAPINet
 {
@@ -35,7 +32,7 @@ namespace ValAPINet
             {
                 playerid = au.subject;
             }
-                string paramz = "?startIndex=" + startindex + "&endIndex=" + endindex;
+            string paramz = "?startIndex=" + startindex + "&endIndex=" + endindex;
             RestClient client = new RestClient("https://pd." + au.region + ".a.pvp.net/mmr/v1/players/" + playerid + "/competitiveupdates" + paramz);
             client.CookieContainer = au.cookies;
 
