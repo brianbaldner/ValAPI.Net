@@ -11,6 +11,7 @@
     {
         public static string Breach = "5F8D3A7F-467B-97F3-062C-13ACF203C006";
         public static string Raze = "f94c3b30-42be-e959-889c-5aa313dba261";
+        public static string KAY/O = "601DBBE7-43CE-BE57-2A40-4ABD24953621";
         public static string Skye = "6f2a04ca-43e0-be17-7f36-b3908627744d";
         public static string Cypher = "117ed9e3-49f3-6512-3ccf-0cada7e3823b";
         public static string Sova = "ded3520f-4264-bfed-162d-b080e2abccf9";
