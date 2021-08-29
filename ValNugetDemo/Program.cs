@@ -12,8 +12,7 @@ namespace ValAPINetDemo
     {
         static void Main(string[] args)
         {
-            Auth auth = Auth.Login("bigtaco21", "TempPass01", Region.NA);
-            AccountXP xp = AccountXP.GetOffers(auth);
+            
         }
     }
 }
