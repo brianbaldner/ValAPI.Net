@@ -1,11 +1,54 @@
-﻿using RestSharp;
+﻿using Newtonsoft.Json;
+using RestSharp;
+using System;
+using System.Collections.Generic;
 
 namespace ValAPINet
 {
     public class AccountXP
     {
         public int StatusCode { get; set; }
-        public string response;
+        public class XpProgress
+        {
+            public int Level { get; set; }
+            public int XP { get; set; }
+        }
+
+        public class StartProgress
+        {
+            public int Level { get; set; }
+            public int XP { get; set; }
+        }
+
+        public class EndProgress
+        {
+            public int Level { get; set; }
+            public int XP { get; set; }
+        }
+
+        public class XPSource
+        {
+            public string ID { get; set; }
+            public int Amount { get; set; }
+        }
+
+        public class XpHistory
+        {
+            public string ID { get; set; }
+            public DateTime MatchStart { get; set; }
+            public StartProgress StartProgress { get; set; }
+            public EndProgress EndProgress { get; set; }
+            public int XPDelta { get; set; }
+            public List<XPSource> XPSources { get; set; }
+            public List<object> XPMultipliers { get; set; }
+        }
+
+            public int Version { get; set; }
+            public string Subject { get; set; }
+            public XpProgress Progress { get; set; }
+            public List<XpHistory> History { get; set; }
+            public string LastTimeGrantedFirstWin { get; set; }
+            public string NextTimeFirstWinAvailable { get; set; }
         public static AccountXP GetOffers(Auth au)
         {
             AccountXP ret = new AccountXP();
@@ -22,9 +65,8 @@ namespace ValAPINet
 
             var responce = client.Execute(request);
             string responcecontent = responce.Content;
-            //ret = JsonConvert.DeserializeObject<AccountXP>(responcecontent);
+            ret = JsonConvert.DeserializeObject<AccountXP>(responcecontent);
             ret.StatusCode = (int)responce.StatusCode;
-            ret.response = responcecontent;
             return ret;
         }
     }

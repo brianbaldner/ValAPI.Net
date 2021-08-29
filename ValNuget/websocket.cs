@@ -11,7 +11,7 @@ namespace ValAPINet
 {
     public class Websocket
     {
-        public static Auth GetAuthLocal(Region region, bool WaitForLockfile = true)
+        public static Auth GetAuthLocal(bool WaitForLockfile = true)
         {
             string lockfile = "";
             if (WaitForLockfile == true)
@@ -74,9 +74,37 @@ namespace ValAPINet
             au.AccessToken = (string)obj["accessToken"];
             au.EntitlementToken = (string)obj["token"];
             au.subject = (string)obj["subject"];
-            au.region = region;
             au.version = versionformat;
             au.cookies = new CookieContainer();
+
+            IRestClient RegClient = new RestClient(new Uri($"https://127.0.0.1:{lf[2]}/player-affinity/product/v1/token"));
+            RegClient.RemoteCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
+            IRestRequest RegRequest = new RestRequest(Method.POST);
+            RegRequest.AddHeader("Authorization", $"Basic {Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes($"riot:{lf[3]}"))}");
+            var valorantData = new
+            {
+                product = "valorant"
+            };
+            RegRequest.AddJsonBody(JsonConvert.SerializeObject(valorantData));
+            IRestResponse RegResp = RegClient.Post(RegRequest);
+            var regobj = JObject.Parse(RegResp.Content);
+            string reg = (string)regobj["affinities"]["live"];
+            if (reg == "NA")
+            {
+                au.region = Region.NA;
+            }
+            else if (reg == "AP")
+            {
+                au.region = Region.AP;
+            }
+            else if (reg == "EU")
+            {
+                au.region = Region.EU;
+            }
+            else if (reg == "KO")
+            {
+                au.region = Region.KO;
+            }
             return au;
         }
         public static Auth StartAndGetAuthLocal(Region region)
@@ -85,7 +113,7 @@ namespace ValAPINet
             p.StartInfo.FileName = "C:\\Riot Games\\Riot Client\\RiotClientServices.exe";
             p.StartInfo.Arguments = "--launch-product=valorant --launch-patchline=live";
             p.Start();
-            return GetAuthLocal(region);
+            return GetAuthLocal();
         }
     }
 }

@@ -2,22 +2,18 @@
 using System;
 using System.IO;
 using ValAPINet;
+using Newtonsoft.Json;
+using RestSharp;
+using System.Text;
+
 namespace ValAPINetDemo
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Auth auth = Websocket.GetAuthLocal(Region.NA);
-            PregameGetPlayer player = PregameGetPlayer.GetPlayer(auth);
-            while (1 == 1)
-            {
-                PregameGetMatch match = PregameGetMatch.GetMatch(auth, player.MatchID);
-                foreach(PregameGetMatch.Player ply in match.AllyTeam.Players)
-                {
-                    Console.WriteLine(ply.CharacterID);
-                }
-            }
+            Auth auth = Auth.Login("bigtaco21", "TempPass01", Region.NA);
+            AccountXP xp = AccountXP.GetOffers(auth);
         }
     }
 }

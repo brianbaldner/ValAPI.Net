@@ -42,11 +42,6 @@ namespace ValAPINet
 
 public static List<Username> GetUsername(Auth au, List<string> playerids)
         {
-            Username ret = new Username();
-            if (playerid == "useauth")
-            {
-                playerid = au.subject;
-            }
             string url = "https://pd." + au.region + ".a.pvp.net/name-service/v2/players";
             RestClient client = new RestClient(url);
             client.CookieContainer = au.cookies;

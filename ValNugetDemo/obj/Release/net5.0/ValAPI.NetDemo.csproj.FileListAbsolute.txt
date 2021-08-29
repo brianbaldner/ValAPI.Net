@@ -12,7 +12,6 @@ C:\Users\brian\Documents\ValAPI.Net\ValNugetDemo\bin\Release\net5.0\Newtonsoft.J
 C:\Users\brian\Documents\ValAPI.Net\ValNugetDemo\bin\Release\net5.0\RestSharp.dll
 C:\Users\brian\Documents\ValAPI.Net\ValNugetDemo\bin\Release\net5.0\ValAPI.Net.dll
 C:\Users\brian\Documents\ValAPI.Net\ValNugetDemo\bin\Release\net5.0\ValAPI.Net.pdb
-C:\Users\brian\Documents\ValAPI.Net\ValNugetDemo\obj\Release\net5.0\ValAPI.NetDemo.csprojAssemblyReference.cache
 C:\Users\brian\Documents\ValAPI.Net\ValNugetDemo\obj\Release\net5.0\ValAPI.NetDemo.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\brian\Documents\ValAPI.Net\ValNugetDemo\obj\Release\net5.0\ValAPI.NetDemo.AssemblyInfoInputs.cache
 C:\Users\brian\Documents\ValAPI.Net\ValNugetDemo\obj\Release\net5.0\ValAPI.NetDemo.AssemblyInfo.cs
@@ -22,3 +21,4 @@ C:\Users\brian\Documents\ValAPI.Net\ValNugetDemo\obj\Release\net5.0\ValAPI.NetDe
 C:\Users\brian\Documents\ValAPI.Net\ValNugetDemo\obj\Release\net5.0\ref\ValAPI.NetDemo.dll
 C:\Users\brian\Documents\ValAPI.Net\ValNugetDemo\obj\Release\net5.0\ValAPI.NetDemo.pdb
 C:\Users\brian\Documents\ValAPI.Net\ValNugetDemo\obj\Release\net5.0\ValAPI.NetDemo.genruntimeconfig.cache
+C:\Users\brian\Documents\ValAPI.Net\ValNugetDemo\obj\Release\net5.0\ValAPI.NetDemo.csproj.AssemblyReference.cache

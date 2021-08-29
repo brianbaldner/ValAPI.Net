@@ -18,14 +18,14 @@ namespace ValAPINet
             public object GameStartTime { get; set; }
             public string TeamID { get; set; }
         }
-        public static MatchHistory GetMatchHistory(Auth au, int startindex, int endindex, string playerid = "useauth")
+        public static MatchHistory GetMatchHistory(Auth au, int startindex, int endindex, string queue, string playerid = "useauth")
         {
             MatchHistory ret = new MatchHistory();
             if (playerid == "useauth")
             {
                 playerid = au.subject;
             }
-            string paramz = "?startIndex=" + startindex + "&endIndex=" + endindex;
+            string paramz = "?startIndex=" + startindex + "&endIndex=" + endindex + "&queue=" + queue;
             RestClient client = new RestClient("https://pd." + au.region + ".a.pvp.net/match-history/v1/history/" + playerid + paramz);
             client.CookieContainer = au.cookies;
 

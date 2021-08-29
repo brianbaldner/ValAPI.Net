@@ -26,8 +26,8 @@ namespace ValAPINet
         {
             public string GameServerHost { get; set; }
             public int GameServerPort { get; set; }
-            public int GameServerObfuscatedIP { get; set; }
-            public int GameClientHash { get; set; }
+            public long GameServerObfuscatedIP { get; set; }
+            public long GameClientHash { get; set; }
             public string PlayerKey { get; set; }
             public string TempMap { get; set; }
             public string TempTeam { get; set; }
