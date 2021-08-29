@@ -11,10 +11,10 @@ namespace ValAPINet
         public string GameName { get; set; }
         public string TagLine { get; set; }
         public int StatusCode { get; set; }
-        public static Username GetUsername(Auth au, string playerid = "useauth")
+        public static Username GetUsername(Auth au, string playerid = null)
         {
             Username ret = new Username();
-            if (playerid == "useauth")
+            if (playerid == null)
             {
                 playerid = au.subject;
             }
