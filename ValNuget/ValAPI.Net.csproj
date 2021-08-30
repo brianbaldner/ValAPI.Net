@@ -7,16 +7,17 @@
     <Authors>BrianBaldner</Authors>
     <Description>A class library for interacting with the Valorant In Game API.</Description>
     <RepositoryUrl>https://github.com/brianbaldner/ValAPI.Net</RepositoryUrl>
-    <PackageReleaseNotes>Added the Account XP endpoint and added KAYO. Make sure to request features you want to see in future updates.</PackageReleaseNotes>
+    <PackageReleaseNotes>Changed the Agents to constants and fixed Sova's id (thanks teddn)</PackageReleaseNotes>
     <NeutralLanguage>en</NeutralLanguage>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.3</Version>
+    <Version>1.3.1</Version>
     <PackageLicenseExpression></PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageIcon>icon.png</PackageIcon>
     <PackageProjectUrl>https://github.com/brianbaldner/ValAPI.Net</PackageProjectUrl>
     <PackageTags>Valorant, Valorant API, Valorant.Net</PackageTags>
     <PackageIconUrl />
+    <PackageLicenseFile>license.txt</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,6 +28,10 @@
 
   <ItemGroup>
     <None Include="icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="license.txt">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
