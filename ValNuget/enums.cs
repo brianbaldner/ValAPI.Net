@@ -14,7 +14,7 @@
         public const string KAYO = "601DBBE7-43CE-BE57-2A40-4ABD24953621";
         public const string Skye = "6f2a04ca-43e0-be17-7f36-b3908627744d";
         public const string Cypher = "117ed9e3-49f3-6512-3ccf-0cada7e3823b";
-        public const string Sova = "ded3520f-4264-bfed-162d-b080e2abccf9";
+        public const string Sova = "320b2a48-4d9b-a075-30f1-1f93a9b638fa";
         public const string Killjoy = "1e58de9c-4950-5125-93e9-a0aee9f98746";
         public const string Viper = "707eab51-4836-f488-046a-cda6bf494859";
         public const string Phoenix = "eb93336a-449b-9c1b-0a54-a891f7921d69";
