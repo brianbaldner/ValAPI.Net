@@ -1,10 +1,10 @@
 ![# ValAPI.Net](https://raw.githubusercontent.com/brianbaldner/ValAPI.Net/main/banner.jpg)
 
-[![Nuget](https://img.shields.io/nuget/v/ValAPI.Net)](https://www.nuget.org/packages/ValAPI.Net/)
+[![Nuget](https://img.shields.io/nuget/v/ValAPI.Net)](https://www.nuget.org/packages/ValAPI.Net/) ![Nuget](https://img.shields.io/nuget/dt/ValAPI.Net)
 
 A class library for interacting with the Valorant In Game API in the .NET framework.
 
-[Docs](https://github.com/brianbaldner/ValAPI.Net/wiki)
+[Docs](https://github.com/brianbaldner/ValAPI.Net/wiki) 
 
 ## Usage
 Use Nuget to download the package to your project. Make sure to include `using ValAPINet;` at the top of your code. The documentation is found in the [wiki](https://github.com/brianbaldner/ValAPI.Net/wiki), but I reccomend using the docsv2 folder in the ValorantClientAPI documentation found at [https://github.com/RumbleMike/ValorantClientAPI](https://github.com/RumbleMike/ValorantClientAPI).
