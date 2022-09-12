@@ -9,9 +9,11 @@
     }
     public class Agent
     {
-        public const string Breach = "5F8D3A7F-467B-97F3-062C-13ACF203C006";
+        public const string Fade = "dade69b4-4f5a-8528-247b-219e5a1facd6";
+        public const string Breach = "5f8d3a7f-467b-97f3-062c-13acf203c006";
         public const string Raze = "f94c3b30-42be-e959-889c-5aa313dba261";
-        public const string KAYO = "601DBBE7-43CE-BE57-2A40-4ABD24953621";
+        public const string Chamber = "22697a3d-45bf-8dd7-4fec-84a9e28c69d7";
+        public const string KAYO = "601dbbe7-43ce-be57-2a40-4abd24953621";
         public const string Skye = "6f2a04ca-43e0-be17-7f36-b3908627744d";
         public const string Cypher = "117ed9e3-49f3-6512-3ccf-0cada7e3823b";
         public const string Sova = "320b2a48-4d9b-a075-30f1-1f93a9b638fa";
@@ -20,6 +22,7 @@
         public const string Phoenix = "eb93336a-449b-9c1b-0a54-a891f7921d69";
         public const string Astra = "41fb69c1-4189-7b37-f117-bcaf1e96f1bf";
         public const string Brimstone = "9f0d8ba9-4140-b941-57d3-a7ad57c6b417";
+        public const string Neon = "bb2a4828-46eb-8cd1-e765-15848195d751";
         public const string Yoru = "7f94d92c-4234-0a36-9646-3a87eb8b5c89";
         public const string Sage = "569fdd95-4d10-43ab-ca70-79becc718b46";
         public const string Reyna = "a3bfb853-43b2-7238-a4f1-ad90e9e46bcc";
