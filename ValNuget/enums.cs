@@ -58,7 +58,7 @@
                 "IMMORTAL 1",
                 "IMMORTAL 2",
                 "IMMORTAL 3",
-                "RADIANT",
+                "RADIANT"
             };
             return ranksfor[rank];
         }
