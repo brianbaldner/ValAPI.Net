@@ -30,36 +30,7 @@
     {
         public static string GetRankFormatted(int rank)
         {
-            string[] ranksfor = new string[] {
-                "UNRANKED",
-                "Unused1",
-                "Unused2",
-                "IRON 1",
-                "IRON 2",
-                "IRON 3",
-                "BRONZE 1",
-                "BRONZE 2",
-                "BRONZE 3",
-                "SILVER 1",
-                "SILVER 2",
-                "SILVER 3",
-                "GOLD 1",
-                "GOLD 2",
-                "GOLD 3",
-                "PLATINUM 1",
-                "PLATINUM 2",
-                "PLATINUM 3",
-                "DIAMOND 1",
-                "DIAMOND 2",
-                "DIAMOND 3",
-                "ASCENDANT 1",
-                "ASCENDANT 2",
-                "ASCENDANT 3",
-                "IMMORTAL 1",
-                "IMMORTAL 2",
-                "IMMORTAL 3",
-                "RADIANT"
-            };
+            string[] ranksfor = new string[] { "Unrated", "none", "none", "Iron 1", "Iron 2", "Iron 3", "Bronze 1", "Bronze 2", "Bronze 3", "Silver 1", "Silver 2", "Silver 3", "Gold 1", "Gold 2", "Gold 3", "Platinum 1", "Platinum 2", "Platinum 3", "Diamond 1", "Diamond 2", "Diamond 3", "Ascendant 1", "Ascendant 2", "Ascendant 3", "Immortal 1", "Immortal 2", "Immortal 3", "Radiant" };
             return ranksfor[rank];
         }
     }
