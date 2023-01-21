@@ -89,19 +89,19 @@ namespace ValAPINet
             IRestResponse RegResp = RegClient.Post(RegRequest);
             var regobj = JObject.Parse(RegResp.Content);
             string reg = (string)regobj["affinities"]["live"];
-            if (reg == "NA")
+            if (reg == "na")
             {
                 au.region = Region.NA;
             }
-            else if (reg == "AP")
+            else if (reg == "ap")
             {
                 au.region = Region.AP;
             }
-            else if (reg == "EU")
+            else if (reg == "eu")
             {
                 au.region = Region.EU;
             }
-            else if (reg == "KO")
+            else if (reg == "ko")
             {
                 au.region = Region.KO;
             }
