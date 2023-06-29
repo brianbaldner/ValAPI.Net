@@ -29,6 +29,8 @@
         public const string Reyna = "a3bfb853-43b2-7238-a4f1-ad90e9e46bcc";
         public const string Omen = "8e253930-4c05-31dd-1b6c-968525494517";
         public const string Jett = "add6443a-41bd-e414-f6ad-e58d267f4e95";
+        public const string Gekko = "e370fa57-4757-3604-3648-499e1f642d3f";
+        public const string Deadlock = "cc8b64c8-4b25-4ff9-6e7f-37b4da43d235";
     }
     public class Ranks
     {
